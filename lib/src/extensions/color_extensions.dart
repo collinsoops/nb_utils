@@ -21,4 +21,15 @@ extension Hex on Color {
 
   /// Returns Luminance of give Color
   double getLuminance() => computeLuminance();
+
+  //withValues=>param alpha
+  Color withValues({double? alpha, int? red, int? green, int? blue}) {
+    return Color.fromARGB(
+      (alpha != null ? (alpha * 255).round() : this.alpha),
+      red ?? this.red,
+      green ?? this.green,
+      blue ?? this.blue,
+    );
+  }
+
 }
